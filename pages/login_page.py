@@ -2,6 +2,7 @@ from .base_page import BasePage
 from .locators import LoginPageLocators
 
 
+
 class LoginPage(BasePage):
     def should_be_login_page(self):
         self.should_be_login_url()
@@ -19,3 +20,12 @@ class LoginPage(BasePage):
         assert self.is_element_present(*LoginPageLocators.REGISTER_EMAIL), f'has no attribute {REGISTER_EMAIL}'
         assert self.is_element_present(*LoginPageLocators.REGISTER_PASS1), f'has no attribute {REGISTER_PASS1}'
         assert self.is_element_present(*LoginPageLocators.REGISTER_PASS2), f'has no attribute {REGISTER_PASS2}'
+
+    def register_new_user(self, email, passwrod):
+        self.browser.find_element(*LoginPageLocators.REGISTER_EMAIL).send_keys(email)
+        self.browser.find_element(*LoginPageLocators.REGISTER_PASS1).send_keys(passwrod)
+        self.browser.find_element(*LoginPageLocators.REGISTER_PASS2).send_keys(passwrod)
+        self.browser.find_element(*LoginPageLocators.REGISTER_BUTTON).click()
+
+
+

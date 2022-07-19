@@ -62,3 +62,5 @@ class ProductPage(BasePage):
     def until_success(self):
         assert self.is_disappeared(*ProducPageLocators.SUCCESS_MESSAGE), 'success message still presented'
 
+
+

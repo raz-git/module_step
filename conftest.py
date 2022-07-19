@@ -2,6 +2,8 @@ import time
 from selenium.webdriver.chrome.options import Options
 import pytest
 from selenium import webdriver
+from .pages.login_page import LoginPage
+
 
 @pytest.fixture(scope="function")
 def browser():
@@ -13,3 +15,5 @@ def browser():
     print("\nquit browser..")
     #time.sleep(3)
     browser.quit()
+
+

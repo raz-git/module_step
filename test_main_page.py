@@ -43,13 +43,7 @@ def test_guest_can_see_product_in_basket_opened_form_main_page(browser):
     page.is_basket_message_present()
     page.is_empty_basket()
 
-def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
-    link = 'http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-shellcoders-handbook_209/'
-    page = BasketPage(browser, link)
-    page.open()
-    page.go_to_basket()
-    page.is_basket_message_present()
-    page.is_empty_basket()
+
 
 
 
